@@ -1387,12 +1387,14 @@ function displayData(){
       .replace('!MATCH!', document.getElementById("input_m").value)
       .replace('!ROBOT!', document.getElementById("display_r").value)
       .replace('!TEAM!', document.getElementById("input_t").value);
-      localStorage.matchData = str;
-      console.log ("I was here")
+      
   } else {
     str = 'Pit Scouting - Team !TEAM!'
       .replace('!TEAM!', document.getElementById("input_t").value);
   }
+
+  localStorage.matchData = str;
+      console.log ("I was here")
 
 }
 
