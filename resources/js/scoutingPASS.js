@@ -1393,9 +1393,6 @@ function displayData(){
       .replace('!TEAM!', document.getElementById("input_t").value);
   }
 
-  localStorage.matchData = str;
-      console.log ("I was here")
-
 }
 
 function copyData(){
