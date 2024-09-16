@@ -884,7 +884,7 @@ function qr_regenerate() {
   }
 
   // Get data
-  data = getData(dataFormat)
+  data = localStorage.getItem(str);
 
   // Regenerate QR Code
   qr.makeCode(data)
