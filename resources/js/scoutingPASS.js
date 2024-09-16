@@ -1379,7 +1379,8 @@ function flip(event) {
 function displayData(){
   document.getElementById('data').innerHTML = getData(dataFormat);
   let str = 'Event: !EVENT! Match: !MATCH! Robot: !ROBOT! Team: !TEAM!';
-
+  localStorage.matchData = str;
+  console.log ("I was here")
   if (!pitScouting) {
     str = str
       .replace('!EVENT!', document.getElementById("input_e").value)
@@ -1391,8 +1392,6 @@ function displayData(){
       .replace('!TEAM!', document.getElementById("input_t").value);
   }
 
-  localStorage.matchData = str;
-  console.log ("I was here")
 }
 
 function copyData(){
