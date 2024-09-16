@@ -1378,6 +1378,21 @@ function flip(event) {
 
 function displayData(){
   document.getElementById('data').innerHTML = getData(dataFormat);
+  let str = 'Event: !EVENT! Match: !MATCH! Robot: !ROBOT! Team: !TEAM!';
+
+  if (!pitScouting) {
+    str = str
+      .replace('!EVENT!', document.getElementById("input_e").value)
+      .replace('!MATCH!', document.getElementById("input_m").value)
+      .replace('!ROBOT!', document.getElementById("display_r").value)
+      .replace('!TEAM!', document.getElementById("input_t").value);
+  } else {
+    str = 'Pit Scouting - Team !TEAM!'
+      .replace('!TEAM!', document.getElementById("input_t").value);
+  }
+
+  localStorage.matchData = str;
+  console.log ("I was here")
 }
 
 function copyData(){
