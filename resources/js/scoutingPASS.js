@@ -885,12 +885,12 @@ function qr_regenerate() {
 
   // Get data
   data = getData(dataFormat)
-  sessionStorage.setItem("matchStoredData",data); 
-  let matchData = sessionStorage.getItem("matchStoredData"); 
+  localStorage.setItem("matchStoredData",data); 
+  let matchData = localStorage.getItem("matchStoredData"); 
 
   // Regenerate QR Code
   qr.makeCode(matchData)
-  
+
   updateQRHeader()
   return true
 }
