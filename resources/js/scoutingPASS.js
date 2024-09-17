@@ -884,7 +884,7 @@ function qr_regenerate() {
   }
 
   // Get data
-  data = localStorage.getItem(matchData);
+  data = localStorage.getItem(data);
 
   // Regenerate QR Code
   qr.makeCode(data)
@@ -1378,8 +1378,7 @@ function flip(event) {
 
 function displayData(){
   document.getElementById('data').innerHTML = getData(dataFormat);
-  let str = 'Event: !EVENT! Match: !MATCH! Robot: !ROBOT! Team: !TEAM!';
-  console.log ("I was here")
+  
   if (!pitScouting) {
     str = str
       .replace('!EVENT!', document.getElementById("input_e").value)
