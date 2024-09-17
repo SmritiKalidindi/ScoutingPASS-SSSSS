@@ -885,7 +885,7 @@ function qr_regenerate() {
 
   // Get data
   data = getData(dataFormat)
-  sessionStorage.setItem("matchStoredData", "data");
+  sessionStorage.setItem("matchStoredData",data);
   let matchData = sessionStorage.getItem("matchStoredData");
   // Regenerate QR Code
   qr.makeCode(matchData)
