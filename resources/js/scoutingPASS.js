@@ -884,10 +884,11 @@ function qr_regenerate() {
   }
 
   // Get data
-  data = localStorage.getItem(data);
-
+  data = getData(dataFormat)
+  sessionStorage.setItem("matchStoredData", "data");
+  let matchData = sessionStorage.getItem("matchStoredData");
   // Regenerate QR Code
-  qr.makeCode(data)
+  qr.makeCode(matchData)
 
   updateQRHeader()
   return true
