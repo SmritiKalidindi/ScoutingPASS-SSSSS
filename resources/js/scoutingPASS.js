@@ -890,24 +890,27 @@ function qr_regenerate() {
 
   // Retrieve the stored data
   const allKeys = Object.keys(localStorage);
+  
+  let matchData = localStorage.getItem(key);
+  
+  let result = '';
 
-  // Iterate through all keys
-  allKeys.forEach(key => {
-    // Check if the key starts with "matchStoredData"
-    if (key.startsWith("matchStoredData")) {
-      // Retrieve the value associated with this key
-      let matchData = localStorage.getItem(key);
-  
-      // Generate QR Code
-      qr.makeCode(matchData);
-  
-      // Optionally, you could break the loop if you only want to generate one QR code
-      // break;
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    
+    if (key.startsWith('matchStoredData')) {
+
+        result += localStorage.getItem(key) + '\n'; // Add linefeed
     }
-  });
+  }
 
+      qr.makeCode(result);
+  
   updateQRHeader()
   return true
+
+
+
 }
 
 function qr_clear() {
