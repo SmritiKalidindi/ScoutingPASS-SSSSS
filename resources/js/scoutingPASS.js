@@ -904,7 +904,8 @@ function qr_regenerate() {
     }
   }
 
-      qr.makeCode(result);
+  console.log (result);
+  qr.makeCode(result);
   
   updateQRHeader()
   return true
