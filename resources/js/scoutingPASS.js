@@ -891,8 +891,6 @@ function qr_regenerate() {
   // Retrieve the stored data
   const allKeys = Object.keys(localStorage);
   
-  let matchData = localStorage.getItem(key);
-  
   let result = '';
 
   for (let i = 0; i < localStorage.length; i++) {
