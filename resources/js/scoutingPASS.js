@@ -885,7 +885,8 @@ function qr_regenerate() {
 
   // Get data
   data = getData(dataFormat)
-  localStorage.setItem("matchStoredData",data); 
+  matchNumber = document.getElementById("input_m").value
+  localStorage.setItem("matchStoredData" + matchNumber); 
   let matchData = localStorage.getItem("matchStoredData"); 
 
   // Regenerate QR Code
