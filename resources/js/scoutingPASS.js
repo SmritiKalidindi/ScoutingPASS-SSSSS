@@ -883,19 +883,30 @@ function qr_regenerate() {
     }
   }
 
-  // Get data
-  data = getData(dataFormat);
-  matchNumber = document.getElementById("input_m").value;
-  localStorage.setItem("matchStoredData" + matchNumber, data);
+  // Function to get all stored data with keys matching "matchStoredData" + number
+function getAllStoredData() {
+  let allData = [];
+  
+  // Iterate through all the keys in localStorage
+  for (let i = 0; i < localStorage.length; i++) {
+    let key = localStorage.key(i);
+    
+    // Check if the key matches the "matchStoredData" pattern
+    if (key.startsWith("matchStoredData")) {
+      let data = localStorage.getItem(key);
+      if (data) {
+        allData.push(data);
+      }
+    }
+  }
+  
+  // Concatenate all collected data into a single string
+  return allData.join(';'); // You can choose a different delimiter if needed
+}
 
-  // Retrieve the stored data
-  let matchData = localStorage.getItem("matchStoredData" + matchNumber);
-
-  // Regenerate QR Code
-  qr.makeCode(matchData)
-
-  updateQRHeader()
-  return true
+// Get all data and generate the QR code
+let allMatchData = getAllStoredData();
+qr.makeCode(allMatchData);
 }
 
 function qr_clear() {
