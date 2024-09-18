@@ -884,10 +884,12 @@ function qr_regenerate() {
   }
 
   // Get data
-  data = getData(dataFormat)
-  matchNumber = document.getElementById("input_m").value
-  localStorage.setItem("matchStoredData" + matchNumber, data); 
-  let matchData = localStorage.getItem("matchStoredData"); 
+  data = getData(dataFormat);
+  matchNumber = document.getElementById("input_m").value;
+  localStorage.setItem("matchStoredData" + matchNumber, data);
+
+  // Retrieve the stored data
+  let matchData = localStorage.getItem("matchStoredData" + matchNumber);
 
   // Regenerate QR Code
   qr.makeCode(matchData)
