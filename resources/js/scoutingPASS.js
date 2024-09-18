@@ -889,10 +889,22 @@ function qr_regenerate() {
   localStorage.setItem("matchStoredData" + matchNumber, data);
 
   // Retrieve the stored data
-  let matchData = localStorage.getItem("matchStoredData" + matchNumber);
+  const allKeys = Object.keys(localStorage);
 
-  // Regenerate QR Code
-  qr.makeCode(matchData)
+  // Iterate through all keys
+  allKeys.forEach(key => {
+    // Check if the key starts with "matchStoredData"
+    if (key.startsWith("matchStoredData")) {
+      // Retrieve the value associated with this key
+      let matchData = localStorage.getItem(key);
+  
+      // Generate QR Code
+      qr.makeCode(matchData);
+  
+      // Optionally, you could break the loop if you only want to generate one QR code
+      // break;
+    }
+  });
 
   updateQRHeader()
   return true
