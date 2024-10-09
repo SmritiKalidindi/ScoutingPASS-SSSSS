@@ -54,6 +54,14 @@ var config_data = `
       "type": "team",
       "min": 1,
       "max": 99999
+    },
+    { "name": "Auto Start Position",
+      "code": "as",
+      "type": "clickable_image",
+      "filename": "2024/field_image.png",
+      "clickRestriction": "one",
+      "allowableResponses": "1 12 13 24 25 36 37 48 49 60 61 72",
+      "shape": "circle 5 black red true"
     }
   ],
   "auton": [
@@ -77,6 +85,10 @@ var config_data = `
     },
     { "name": "Speaker Scores",
       "code": "tss",
+      "type": "counter"
+    },
+    { "name": "Times Amplified",
+      "code": "tta",
       "type": "counter"
     },
     { "name": "Pickup From",
@@ -115,6 +127,17 @@ var config_data = `
     }
   ],
   "postmatch": [
+    { "name": "Driver Skill",
+      "code": "ds",
+      "type": "radio",
+      "choices": {
+        "n": "Not Effective<br>",
+        "a": "Average<br>",
+        "v": "Very Effective<br>",
+        "x": "Not Observed"
+      },
+      "defaultValue": "x"
+    },
     { "name": "Defense Rating",
       "code": "dr",
       "type": "radio",
@@ -127,7 +150,7 @@ var config_data = `
       },
       "defaultValue": "x"
     },
-    { "name": "Drive Rating (Speed and Driver Skill)",
+    { "name": "Speed Rating",
       "code": "sr",
       "type": "radio",
       "choices": {
@@ -151,11 +174,7 @@ var config_data = `
       "code": "dn",
       "type": "bool"
     },
-    { "name": "No Show",
-      "code": "ns",
-      "type": "bool"
-    },
-    { "name": "Should consider for alliance selection",
+    { "name": "Make good<br>alliance partner?",
       "tooltip": "Would you want this robot on your alliance in eliminations?",
       "code": "all",
       "type": "bool"
