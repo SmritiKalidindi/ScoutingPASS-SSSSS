@@ -86,14 +86,6 @@ var config_data = `
       "code": "ac4",
       "type": "counter"
     },
-    { "name": "Processor Score",
-      "code": "aps",
-      "type": "counter"
-    },
-    { "name": "Net Score",
-      "code": "ans",
-      "type": "counter"
-    },
     { "name": "Did they recieve a foul in Auto",
       "code": "autoFoul",
       "type": "bool"
@@ -124,17 +116,6 @@ var config_data = `
       "code": "tns",
       "type": "counter"
     },
-    { "name": "Pickup From",
-      "code": "tpu",
-      "type": "radio",
-      "choices": {
-        "s": "Coral Station<br>",
-        "f": "Floor<br>",
-        "b": "Both<br>",
-        "x": "Not Attempted"
-      },
-      "defaultValue": "x"
-    },
     { "name": "Minor Fouls",
       "code": "foul",
       "type": "counter"
@@ -162,13 +143,6 @@ var config_data = `
     { "name": "Attained Coopertition Pt",
       "code": "cop",
       "type": "bool"
-    },
-    { "name": "Algae Left in Reef",
-      "code": "alr",
-      "type": "number",
-      "min": 0,
-      "max": 9,
-      "defaultValue": 0
     },
     { "name": "Speed Rating",
       "code": "sr",
@@ -198,14 +172,6 @@ var config_data = `
     "code": "ns",
     "type": "bool"
   },
-    { "name": "Dropped Coral (>2)",
-      "code": "dc",
-      "type": "bool"
-    },
-    { "name": "Dropped Algae (>2)",
-      "code": "da",
-      "type": "bool"
-    },
     { "name": "Comments",
       "code": "co",
       "type": "text",
