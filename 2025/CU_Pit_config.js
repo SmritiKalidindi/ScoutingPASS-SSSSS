@@ -1,5 +1,6 @@
 var config_data = `
 {
+  "dataFormat": "tsv",
   "title": "Scouting PASS 2025",
   "page_title": "Reefscape",
   "pitConfig": "true",
@@ -74,12 +75,15 @@ var config_data = `
     },
     { "name": "Bumper Comments",
       "code": "bumper_comment",
-      "type": "text"
+      "type": "text",
+      "size": 30,
+      "maxSize": 250
     },
     { "name": "Comments",
       "code": "pitCom",
       "type": "text",
-      "size": 30
+      "size": 30,
+      "maxSize": 250
     }
   ],
   "auton": [
