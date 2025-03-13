@@ -15,7 +15,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2025nccat",
+      "defaultValue": "2025ncwak",
       "required": "true"
     },
     { "name": "Match Level",
