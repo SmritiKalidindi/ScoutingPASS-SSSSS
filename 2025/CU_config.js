@@ -15,7 +15,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2025ncpem",
+      "defaultValue": "2025nccmp",
       "required": "true"
     },
     { "name": "Match Level",
@@ -171,7 +171,8 @@ var config_data = `
       "code": "co",
       "type": "text",
       "size": 15,
-      "maxSize": 55
+      "defaultValue": ".",
+      "maxSize": 100
     }
   ]
 }`;
