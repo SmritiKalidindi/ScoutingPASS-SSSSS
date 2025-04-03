@@ -418,6 +418,11 @@ function addText(table, idx, name, data) {
   cell2.classList.add("field");
   var inp = document.createElement("input");
   inp.setAttribute("id", "input_" + data.code);
+  // if (data.code === "co") {
+  //   inp.setAttribute("id", "input1");
+  // } else {
+  //   inp.setAttribute("id", "input_" + data.code);
+  // }
   inp.setAttribute("type", "text");
   if (enableGoogleSheets && data.hasOwnProperty('gsCol')) {
     inp.setAttribute("name", data.gsCol);
@@ -446,7 +451,7 @@ function addText(table, idx, name, data) {
 
   if (data.hasOwnProperty('defaultValue')) {
     var def = document.createElement("input");
-    def.setAttribute("id", "default_" + data.code)
+    def.setAttribute("id", "default_" + data.code);
     def.setAttribute("type", "hidden");
     def.setAttribute("value", data.defaultValue);
     cell2.appendChild(def);
