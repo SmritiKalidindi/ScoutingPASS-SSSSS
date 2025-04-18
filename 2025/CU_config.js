@@ -15,7 +15,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2025nccmp",
+      "defaultValue": "2025dal",
       "required": "true"
     },
     { "name": "Match Level",
